@@ -1,0 +1,265 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"st",
+				"style"
+			],
+			[
+				"fi",
+				"fill"
+			],
+			[
+				"scale",
+				"scaleLinear"
+			],
+			[
+				"mi",
+				"min"
+			],
+			[
+				"x",
+				"xElements"
+			],
+			[
+				"to",
+				"top"
+			],
+			[
+				"HW",
+				"HwyMPG"
+			],
+			[
+				"sele",
+				"select"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"t",
+				"textarea\tTag"
+			],
+			[
+				"select",
+				"selectAll"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"mou",
+				"mouseleave"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"r",
+				"RetailPrice"
+			],
+			[
+				"se",
+				"selectAll"
+			],
+			[
+				"data",
+				"data"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 131.199996948,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/mutla/Desktop/Caliphate Map/2021_caliphate_map/Entity Extraction/code/LocationResults/JSON/RihlatIbnBattuta.json",
+		"/C/Users/mutla/Downloads/l5smqbcwtccg4t.csv",
+		"/C/xampp/htdocs/viz/ex2.html",
+		"/C/xampp/htdocs/viz/index.html",
+		"/C/Users/mutla/Desktop/viz/index.html",
+		"/C/Users/mutla/Desktop/viz/sigma.js-1.2.1/index.html",
+		"/C/Users/mutla/Desktop/sigma.js-1.2.1/index.html",
+		"/C/xampp/htdocs/HW2_207500448/index.html",
+		"/C/xampp/htdocs/HW2_207500448/d3.legend.js",
+		"/C/xampp/htdocs/HW2_207500448/bar.js",
+		"/C/xampp/htdocs/HW2_207500448/csv.js",
+		"/C/xampp/htdocs/HW2_207500448/carTypes.js",
+		"/C/Users/mutla/Desktop/Visualization/HW2_207500448/index.html",
+		"/C/Users/mutla/Desktop/Visualization/HW2_207500448/carTypes.js",
+		"/C/Users/mutla/Desktop/Visualization/week 6/week6_207500448.html",
+		"/C/Users/mutla/Desktop/Visualization/Week5/week6_207500448.html",
+		"/C/Users/mutla/Desktop/Visualization/Week5/Week5_207500448.html",
+		"/C/Users/mutla/Desktop/try.html",
+		"/C/Users/mutla/Desktop/Visualization/HW1/AllScript",
+		"/C/Users/mutla/Desktop/eee",
+		"/C/Users/mutla/Desktop/ex.json",
+		"/C/Users/mutla/Desktop/Caliphate Map/2021_caliphate_map/Entity Extraction/code/PolyglotNER4-Futooh AlBuldan.xlsx",
+		"/C/Users/mutla/Desktop/BI_EX1/ReadMe.php",
+		"/C/Users/mutla/Downloads/accounts.psql",
+		"/C/Users/mutla/Downloads/hr.java",
+		"/C/Users/mutla/Desktop/Scorpion_Sw/Hamka_scorpion/src/View/Main.java",
+		"/C/Users/mutla/OneDrive/Documents/GitHub/test1Repositry/firstfile_Test1"
+	],
+	"find":
+	{
+		"height": 27.2
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.2
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 51.2
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
