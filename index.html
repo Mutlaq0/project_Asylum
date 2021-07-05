@@ -1,36 +1,196 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <title>Project: Asylum Vizualizations</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="dashboard"> <!-- dashboard--> 
-        <section class="navigation" > <!-- navigation--> 
-            <img src="assets/img/protect.jpg" alt="logo" />
-            
-        
-            <div> <!-- icons--> 
-                <span class="material-icons-outlined">
-                    info
-                </span>
-
-            </div>
-
-
-        </section> <!-- End navigation--> 
-
-        <section class="main" > <!-- main--> 
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+<!--    <div class="dashboard"> &lt;!&ndash; dashboard&ndash;&gt; -->
+<!--        <section class="navigation" > &lt;!&ndash; navigation&ndash;&gt; -->
+<!--            <img src="assets/img/protect.jpg" alt="logo" />-->
+<!--            -->
+<!--        -->
+<!--            <div> &lt;!&ndash; icons&ndash;&gt; -->
+<!--                <span class="material-icons-outlined">info</span>-->
+<!--                <img src="assets/img/unhcrlogo.png" alt="unhcr logo" style="width: 40px; height: 40px"/>-->
+<!--            </div>-->
 
 
-        </section> <!-- End main--> 
+<!--        </section> &lt;!&ndash; End navigation&ndash;&gt; -->
 
-         <section class="secondary" > <!-- secondary--> 
+<!--        <section class="main" > &lt;!&ndash; main&ndash;&gt;-->
+<!--            <div class="title">   &lt;!&ndash; Title &ndash;&gt;-->
+<!--                <h1>Asylum Project</h1>-->
+<!--            </div>              &lt;!&ndash;  End Title &ndash;&gt;-->
 
 
-        </section> <!-- End secondary--> 
 
-    </div> <!-- End dashboard-->
+
+
+<!--        </section> &lt;!&ndash; End main&ndash;&gt; -->
+
+<!--         <section class="secondary" > &lt;!&ndash; secondary&ndash;&gt; -->
+
+
+<!--        </section> &lt;!&ndash; End secondary&ndash;&gt; -->
+
+<!--    </div> &lt;!&ndash; End dashboard&ndash;&gt;-->
+
+
+<div id="map"></div>
+
+  <script>
+var country = "Afghanistan"
+var width = 960,
+    height = 500;
+
+var projection = d3
+        .geoEquirectangular()
+        .center([0, 15]) // set centre to further North as we are cropping more off bottom of map
+        .scale([width / (2 * Math.PI)]) // scale to fit group width
+        .translate([width / 2, height / 2]) // ensure centred in group
+      ;
+var path = d3.geoPath()
+  .projection(projection)
+const container = d3.select("#map");
+const svg = container.append("svg").attr("width", width).attr("height", height);;
+// var svg = d3.select("body").append("svg")
+//     .attr("width", width)
+//     .attr("height", height);
+var tooltipDiv = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+// zooming in map
+let zoom = d3.zoom()
+   .scaleExtent([1, 2])
+   .translateExtent([[-500, -300], [1500, 1000]])
+   .on('zoom', () => {
+       svg.attr('transform', d3.event.transform)
+   });
+
+container.call(zoom);
+
+//reading json file to project a map
+d3.json("countries.json", function(error, countries) {
+  if (error) console.log(error);
+
+
+  svg.selectAll("path")
+    .data(countries.features)
+  .enter().append("path")
+    .attr("d", path).style("fill", function(d){
+        return "grey"
+  })
+    .on("mouseover",function(d) {
+    	d3.select(this)
+      	.classed("active",true);
+
+    	tooltipDiv.transition()
+            .duration(200)
+            .style("opacity", .9);
+        tooltipDiv.html(d.properties.titles )
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY - 28) + "px");
+  	})
+  	.on("mouseout",function(d){
+    	d3.select(this)
+      	.classed("active",false);
+    	 tooltipDiv.transition()
+            .duration(500)
+            .style("opacity", 0);
+    }).on("click", function(d) {
+      country = d.properties.titles;
+      return country
+});
+
+
+
+
+});
+
+  </script>
+<!--<div id ="barchart"></div>-->
+  <svg id = "barchart" width="600" height="500"></svg>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var refugeesIn, originatedFrom
+d3.csv("countries.csv", function(d) {
+  if(d.country == country){
+      refugeesIn = d.refugees_to
+      originatedFrom = d.refugees_from
+  }
+}, function(error, data) {
+  if (error) throw error;
+
+var dataset = [refugeesIn,originatedFrom];
+var svg1 = d3.select("#barchart"),
+            margin1 = 200,
+            width1 = svg1.attr("width") - margin1,
+            height1 = svg1.attr("height") - margin1
+
+var xScale = d3.scaleBand().range([0, width1]).padding(0.5),
+            yScale = d3.scaleLinear().range([height1, 0]);
+
+var g1 = svg1.append("g")
+            .attr("transform", "translate(" + 100 + "," + 100 + ")");
+
+var max = d3.max(dataset, function(d) { return +d;} );
+
+        xScale.domain(dataset);
+        yScale.domain([0, max ]);
+
+        g1.append("g")
+         .attr("transform", "translate(0," + height1 + ")")
+         .call(d3.axisBottom(xScale).tickFormat(function(d,i){
+             if( i %2 ==0){
+                 return "Refugees In Country";
+             }else{
+                 return "Refugees From Country";
+             }
+         })
+         );
+var tooltip = d3.select("body").append("div").attr("class", "BarcharttoolTip");
+
+        g1.append("g")
+         .call(d3.axisLeft(yScale).ticks(4));
+svg1.append("text")
+    .attr("text-anchor", "end")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 15)
+    .attr("x", -200)
+    .text("Population")
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+       g1.selectAll(".bar")
+         .data(dataset)
+         .enter().append("rect")
+         .attr("class", "bar")
+         .attr("x", function(d) { return xScale(d); })
+         .attr("y", function(d) {
+             return yScale(d); })
+         .attr("width", xScale.bandwidth())
+         .attr("height", function(d) { return height1 - yScale(d); })
+         .on("mousemove", function(d){
+            tooltip
+              .style("left", d3.event.pageX - 50 + "px")
+              .style("top", d3.event.pageY - 70 + "px")
+              .style("display", "inline-block")
+              .html(numberWithCommas(d));
+        })
+    		.on("mouseout", function(d){ tooltip.style("display", "none");});
+});
+
+</script>
 </body>
 </html>
