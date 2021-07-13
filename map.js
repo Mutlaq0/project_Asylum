@@ -1,6 +1,6 @@
 var country = "Afghanistan"
-var width = 900,
-    height = 500;
+var width = 700,
+    height = 400;
 
 var projection = d3
         .geoEquirectangular()
