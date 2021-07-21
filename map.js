@@ -32,11 +32,14 @@ d3.json("countries.json", function(error, countries) {
   if (error) console.log(error);
 
 
+
   svg.selectAll("path")
     .data(countries.features)
   .enter().append("path")
-    .attr("d", path).style("fill", function(d){
-        return "grey"
+    .attr("d", path).style("fill", function (d){
+        if(d.properties.titles == country){
+            return "red";
+        }
   })
     .on("mouseover",function(d) {
     	d3.select(this)

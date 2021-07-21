@@ -1,3 +1,6 @@
+  var t = d3.transition()
+      .duration(750)
+      .ease(d3.easeLinear);
 
 // set the dimensions and margins of the graph
 var marginSankey = {top: 10, right: 10, bottom: 10, left: 10},
@@ -145,6 +148,7 @@ function draw(SankeySvg,widthSankey,heightSankey,marginSankey, sankey,formatNumb
 {
    var Sankeypath = sankey.link()
      // add in the links
+
   var link = SankeySvg.append("g").selectAll(".link")
       .data(graph.links)
     .enter().append("path")
@@ -152,12 +156,12 @@ function draw(SankeySvg,widthSankey,heightSankey,marginSankey, sankey,formatNumb
       .attr("d", Sankeypath)
       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
       .sort(function(a, b) { return b.dy - a.dy; });
-
   // add the link titles
   link.append("title")
         .text(function(d) {
     		return d.source.name + " → " +
                 d.target.name + "\n" + format(d.value); });
+
 
   // add in the nodes
   var node = SankeySvg.append("g").selectAll(".node")

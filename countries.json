@@ -885,7 +885,7 @@
     "names" : [ "Korean People’s Republic", "Choson Minchu-chui Inmin Konghwa-Guk", "People’s Democratic Republic of Korea", "People’s Republic of Korea", "كوريا الشمالية", "Demokratische Volksrepublik Korea", "Κορέα, Βόρεια", "North Korea", "Corea del Norte", "Corée du Nord", "उत्तर कोरिया", "Corea del Nord", "朝鮮民主主義人民共和国", "Coreia, Norte", "Северная Корея", "北朝鲜", "Nordkorea", "Βόρεια Κορέα", "उत्तरी कोरिया", "Coreia do Norte", "Корейская Народно-Демократическая Республика", "朝鲜民主主义人民共和国", "উত্তর কোরিয়া", "Korea (Demokratische Volksrepublik, Nordkorea)", "República Popular Democrática de Corea", "Corée (République populaire démocratique de)", "Corea, Repubblica Popolare Democratica", "韓国、朝鮮民主主義人民共和国", "República Popular Democrática da Coreia", "朝鲜民主共和国", "Democratic People’s Republic of Korea", "North Korea", "Korea, Democratic People’s Republic of" ],
     "source_gazetteers" : [ "http://www.geonames.org" ],
     "quotes" : [ "Dem. People's Rep. of Korea" ]
-  }, {
+  },  {
     "type" : "Feature",
     "geometry" : {
       "type" : "MultiPolygon",

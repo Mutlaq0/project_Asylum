@@ -63,6 +63,7 @@ var pie = d3.pie()
           return d.value;
      })
      .sort(null)
+     d3.select("#write").attr("x", 100).attr("y",100).text("Originated From Country");
 var Donuttooltip = d3.select("body").append("div").attr("class", "Donuttooltip");
 
      var path = svgDonut.selectAll('path')
@@ -100,11 +101,11 @@ var legend = svgDonut.selectAll('.legend') //the legend and placement
 legend.append('circle') //keys
 .style('fill', color)
 .style('stroke', color)
-.attr('cx', 0)
+.attr('cx', -10)
 .attr('cy', 0)
 .attr('r', '.5rem');
 legend.append('text') //labels
-.attr('x', legendRectSize + legendSpacing)
+.attr('x', legendRectSize + legendSpacing -15)
 .attr('y', legendRectSize - legendSpacing)
 .text(function (d) {
      return d;
@@ -115,10 +116,13 @@ legend.append('text') //labels
 d3.select("button#InCountry")
      .on("click", function () {
           change(country_data);
+          d3.select("#write").transition().duration(750).text("Inside Country")
      })
 d3.select("button#FromCountry")
      .on("click", function () {
           change(origin_data)
+                   d3.select("#write").transition().duration(750).text("Originated From Country")
+
      })
 
 
@@ -192,6 +196,6 @@ function change(data) {
           .outerRadius(radius);
      path = d3.select("#donut")
           .selectAll("path")
-          .data(pie).attr("d", arc).transition().duration(500);// Compute the new angles
+          .data(pie).transition().duration(500).attr("d", arc);// Compute the new angles
 
 }
